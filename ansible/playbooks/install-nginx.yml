@@ -1,0 +1,14 @@
+---
+hosts: allhosts #change me 
+become: yes # select yes  if becoming root requires.
+
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx # install package nginx server
+      state: latest # ensure the nginx will be current release
+  
+  - name : Start nginx
+    service:
+      name: nginx # service to start
+      state: started # target service state

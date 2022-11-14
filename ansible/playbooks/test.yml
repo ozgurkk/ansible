@@ -1,0 +1,19 @@
+---
+- hosts: Lilya
+  become: yes
+
+  tasks:
+    - name: Install Apache 2
+      yum:
+        name: httpd
+        state: present
+        update_cache: yes
+      tags: Apache
+    
+    - name: NTP Service
+      yum: 
+        name: ntp
+        state: present
+    
+    - name: Control NTP Service
+      service: name=ntp state=started enabled=yes

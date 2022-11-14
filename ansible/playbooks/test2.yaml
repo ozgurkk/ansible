@@ -1,0 +1,6 @@
+---
+hosts:web-test
+become: yes
+
+  - tasks
+    name: 
